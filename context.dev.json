@@ -1,0 +1,37 @@
+{
+  "_static_url": "/src",
+  "theme_color_mode": "auto",
+  "theme_nav_links": [
+    {
+      "title": "Examples",
+      "link": "#",
+      "children": [
+        {
+          "icon": "logos:amp-icon",
+          "title": "Blog",
+          "subtitle": "A blog example",
+          "link": "/blog/"
+        },
+        {
+          "icon": "lucide:podcast",
+          "title": "Podcast",
+          "subtitle": "A podcast example",
+          "link": "/podcast/"
+        }
+      ]
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com/typlog/theme-ueno",
+      "new_tab": true
+    }
+  ],
+  "theme_github_url": "https://github.com/typlog/theme-nezu",
+  "theme_bluesky_url": "https://bsky.app/profile/typlog.com",
+  "theme_social_links": [
+  ],
+  "theme_github_sponsor_url": "https://github.com/sponsors/lepture",
+  "theme_patreon_url": "https://patreon.com/lepture",
+  "theme_afdian_url": "https://afdian.com/a/pythonhunter",
+  "theme_copyright": "Copy &copy; 2024, <a href='https://typlog.com/'>Typlog</a>"
+}
