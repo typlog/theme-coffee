@@ -1,6 +1,8 @@
 {% block styles %}
-<link rel="preconnect" href="https://use.typkit.net">
-<link rel="stylesheet" href="https://use.typekit.net/zbe5yhf.css">
+<style>:root{ --background-color: {{ theme_background_color|default("#F8F7F6") }} }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ _static_url }}/base.css">
 <link rel="stylesheet" href="{{ _static_url }}/archive.css">
 {% endblock %}
@@ -13,16 +15,19 @@
 
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
-  <div class="container">
-    {% include "./_partials/column-info.j2" %}
-    <div class="entry-list js-lightbox">
-      {% if pagination.items %}
-        {% for note in pagination.items %}
-          {% include "./_partials/entry-item.j2" %}
-        {% endfor %}
-      {% endif %}
-      {% include "./_partials/navigation.j2" %}
-    </div>
+  {% include "./_layouts/site-banner.j2" %}
+  {% if podcast %}
+  <div class="site-links">
+    <ul>{% include "./_partials/podcast-links.j2" %}</ul>
+  </div>
+  {% endif %}
+  <div class="entry-list">
+    {% if pagination.items %}
+      {% for note in pagination.items %}
+        {% include "./_partials/entry-item.j2" %}
+      {% endfor %}
+    {% endif %}
+    {% include "./_partials/navigation.j2" %}
   </div>
   {% include "./_layouts/site-foot.j2" %}
 {% endblock %}

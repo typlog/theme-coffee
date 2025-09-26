@@ -1,0 +1,9 @@
+.site-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.site-banner img {
+  max-width: 1080px;
+  width: 100%;
+}

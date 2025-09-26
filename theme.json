@@ -1,106 +1,35 @@
 {
-  "name": "nezu",
-  "name#ja": "根津",
-  "name#zh": "根津",
-  "version": "0.6.1",
-  "repo": "typlog/theme-nezu",
-  "image": "https://user-images.githubusercontent.com/290496/185733933-ed6ad0a0-0634-47bd-8a45-2e38e1d8b5ae.png",
-  "description": "A single column theme for blogs and podcasts.",
+  "name": "coffee",
+  "version": "0.1.0",
+  "repo": "typlog/theme-coffee",
+  "image": "",
+  "description": "A theme designed for podcasters, by uxcoffee.",
+  "preview_tenant_id": 150,
   "config": [
     {
-      "friendlyName": "General",
+      "friendlyName": "Design",
       "fields": [
         {
-          "name": "color_mode",
-          "type": "enum",
-          "default": "auto",
-          "options": {
-            "choices": ["auto", "light", "dark"]
+          "friendlyName": "Background color",
+          "name": "background_color",
+          "type": "color",
+          "default": "#F8F7F6"
+        },
+        {
+          "name": "banner_image",
+          "type": "image",
+          "default": {
+            "src": "https://cdn.jsdelivr.net/gh/lepture/typlog-coffee@0.4.0/assets/banner.png",
+            "width": 2160,
+            "height": 1200
           }
-        },
-        {
-          "name": "copyright",
-          "type": "string"
         }
       ]
     },
     {
-      "name": "nav_links",
       "friendlyName": "Navbar links",
+      "name": "nav_links",
       "type": "NavLink",
-      "multiple": true,
-      "options": {
-        "children": true
-      }
-    },
-    {
-      "friendlyName": "Social links",
-      "fields": [
-        {
-          "name": "x_url",
-          "friendlyName": "X (Twitter)",
-          "type": "url"
-        },
-        {
-          "name": "bluesky_url",
-          "friendlyName": "BlueSky",
-          "type": "url"
-        },
-        {
-          "name": "github_url",
-          "friendlyName": "GitHub",
-          "type": "url"
-        },
-        {
-          "name": "linkedin_url",
-          "friendlyName": "LinkedIn",
-          "type": "url"
-        },
-        {
-          "name": "discord_url",
-          "friendlyName": "Discord",
-          "type": "url"
-        },
-        {
-          "name": "youtube_url",
-          "friendlyName": "YouTube",
-          "type": "url"
-        },
-        {
-          "name": "reddit_url",
-          "friendlyName": "Reddit",
-          "type": "url"
-        },
-        {
-          "name": "social_links",
-          "type": "IconLink",
-          "multiple": true
-        }
-      ]
-    },
-    {
-      "friendlyName": "Sponsor links",
-      "fields": [
-        {
-          "name": "github_sponsor_url",
-          "friendlyName": "GitHub Sponsor",
-          "type": "url"
-        },
-        {
-          "name": "patreon_url",
-          "friendlyName": "Patreon",
-          "type": "url"
-        },
-        {
-          "name": "afdian_url",
-          "friendlyName": "爱发电",
-          "type": "url"
-        }
-      ]
-    },
-    {
-      "name": "foot_links",
-      "type": "SectionLinks",
       "multiple": true
     }
   ],

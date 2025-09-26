@@ -6,6 +6,10 @@
   margin-bottom: 3rem;
 }
 
+.e-content .audio-player {
+  margin-bottom: 2rem;
+}
+
 :where(.e-content) > div {
   margin-bottom: 1rem;
 }
