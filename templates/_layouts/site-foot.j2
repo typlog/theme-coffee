@@ -1,101 +1,9 @@
-{% macro render_social_links() %}
-<ul class="icon-links">
-  {% if theme_x_url %}
-    <li class="icon-link">
-      <a href="{{ theme_x_url }}" aria-label="X (Twitter)">
-        <iconify-icon icon="simple-icons:x"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_bluesky_url %}
-    <li class="icon-link">
-      <a href="{{ theme_bluesky_url }}" aria-label="BlueSky">
-        <iconify-icon icon="simple-icons:bluesky"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_github_url %}
-    <li class="icon-link">
-      <a href="{{ theme_github_url }}" aria-label="GitHub">
-        <iconify-icon icon="simple-icons:github"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_linkedin_url %}
-    <li class="icon-link">
-      <a href="{{ theme_linkedin_url }}" aria-label="LinkedIn">
-        <iconify-icon icon="simple-icons:linkedin"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_discord_url %}
-    <li class="icon-link">
-      <a href="{{ theme_discord_url }}" aria-label="Discord">
-        <iconify-icon icon="simple-icons:discord"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_youtube_url %}
-    <li class="icon-link">
-      <a href="{{ theme_youtube_url }}" aria-label="YouTube">
-        <iconify-icon icon="simple-icons:youtube"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {% if theme_reddit_url %}
-    <li class="icon-link">
-      <a href="{{ theme_reddit_url }}" aria-label="Reddit">
-        <iconify-icon icon="simple-icons:reddit"></iconify-icon>
-      </a>
-    </li>
-  {% endif %}
-  {%- for item in links -%}
-    <li class="icon-link">
-      <a href="{{ item.link }}" aria-label="{{ item.title }}"{% if item.new_tab  %} target="_blank"{% endif %}>
-        <iconify-icon icon="{{ item.icon }}"></iconify-icon>
-      </a>
-    </li>
-  {%- endfor -%}
-</ul>
-{% endmacro %}
-
-{% macro render_foot_links() %}
-  {%- for section in theme_foot_links -%}
-    <section class="section-links">
-      <h1 class="section-group-caption">{{ section.caption }}</h1>
-      <ul class="section-group-links">
-        {%- for item in section.links -%}
-          <li class="section-group-link">
-            <a href="{{ item.link }}" {% if item.new_tab  %} target="_blank"{% endif %}>{{ item.title }}</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </section>
-  {%- endfor -%}
-{% endmacro %}
-
-{% if theme_foot_links %}
-<div class="site-foot has-foot-links">
-  <div class="site-foot_content">
-    <div class="site-foot_logo">
-      {% include "components/site-logo.j2" %}
-    </div>
-    <div class="site-foot_links">
-      {{ render_foot_links() }}
-    </div>
-  </div>
-  <div class="site-foot_copyright">
-    {% if theme_copyright %}
-      <div>{{ theme_copyright|safe }}</div>
-    {% endif %}
-    {{ render_social_links() }}
-  </div>
-</div>
-{% else %}
 <div class="site-foot">
   <div class="site-foot_content">
     <div class="site-foot_logo">
-      {% include "components/site-logo.j2" %}
+      {% if site.glyph_logo_light %}
+      <img src="{{ site.glyph_logo_light|thumbnail('ss') }}" width="32" height="32" loading="lazy" alt="{{ site.name }}"/>
+      {% endif %}
     </div>
     <div class="site-foot_links">
       <a href="/archive/">{{ translate('archive') }}</a>
@@ -104,11 +12,7 @@
       {% endfor %}
     </div>
   </div>
-  <div class="site-foot_copyright">
-    {% if theme_copyright %}
-      <div>{{ theme_copyright|safe }}</div>
-    {% endif %}
-    {{ render_social_links() }}
-  </div>
 </div>
-{% endif %}
+<div class="typlog-foot">
+  <div class="typlog-foot_content">Powered by <a href="https://typlog.com/">Typlog</a>. Theme designed by <a href="https://www.linkedin.com/in/fanzhangux/">Fan Zhang</a>.</div>
+</div>

@@ -5,13 +5,14 @@
 
 .entry-head .p-name {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.825rem;
+  line-height: 1.2;
 }
 
 .entry-head .p-summary {
   margin: 6px 0 0;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: rgba(0, 0, 0, 0.5);
 }
 
