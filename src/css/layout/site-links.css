@@ -4,29 +4,46 @@
 
 .site-links ul {
   display: inline-flex;
-  gap: 1rem;
+  gap: 1.625rem;
 }
 
 .site-links iconify-icon {
   font-size: 1.5rem;
 }
 
-.site-links a[aria-label="Apple Podcast"]:hover {
-  color: #9933CC;
+.site-links a:hover iconify-icon {
+  color: var(--hover-color);
 }
 
-.site-links a[aria-label="Spotify"]:hover {
-  color: #1DB954;
+.site-links a {
+  display: inline-block;
+  --hover-color: var(--accent-10);
 }
 
-.site-links a[aria-label="Castro"]:hover {
-  color: #00B265;
+.site-links iconify-icon[icon="simple-icons:applepodcasts"] {
+  --hover-color: #9933CC;
 }
 
-.site-links a[aria-label="Pocket Casts"]:hover {
-  color: #F43E37;
+.site-links iconify-icon[icon="simple-icons:spotify"] {
+  --hover-color: #1DB954;
 }
 
-.site-links a[aria-label="小宇宙"]:hover {
-  color: #23b5e1;
+.site-links iconify-icon[icon="simple-icons:castro"] {
+  --hover-color: #00B265;
+}
+
+.site-links iconify-icon[icon="simple-icons:pocketcasts"] {
+  --hover-color: #F43E37;
+}
+
+.site-links iconify-icon[icon="simple-icons:breaker"] {
+  --hover-color: #003DA8;
+}
+
+.site-links iconify-icon[icon="simple-icons:overcast"] {
+  --hover-color: #FC7E0F
+}
+
+.site-links iconify-icon[icon="custom:xyz"] {
+  --hover-color: #23b5e1;
 }

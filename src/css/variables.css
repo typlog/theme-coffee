@@ -1,7 +1,5 @@
 @import '@radix-ui/colors/gray.css';
-@import '@radix-ui/colors/gray-dark.css';
 @import '@radix-ui/colors/gray-alpha.css';
-@import '@radix-ui/colors/gray-dark-alpha.css';
 
 :root {
   --text-color: var(--gray-12);
