@@ -1,0 +1,35 @@
+<div class="entry-head flex gap-8">
+  {% if note.audio.image %}
+  <img class="entry-image" src="{{ note.audio.image|thumbnail('sm') }}" alt="{{ note.title }} image" width="240"
+    height="240">
+  {% endif %}
+  <div class="overflow-hidden w-full px-6">
+    {% include "./entry-meta.j2" %}
+    <h1 class="p-name">{{ note.title }}</h1>
+    {% if note.subtitle %}
+    <h2 class="p-summary">{{ note.subtitle }}</h2>
+    {% endif %}
+    <div class="flex gap-8 mt-6">
+      {% if note.authors %}
+      <div>
+        <div class="author-type">
+          <strong>Hosts</strong>
+        </div>
+        <div class="flex gap-1">
+          {{ render_authors(note.authors) }}
+        </div>
+      </div>
+      {% endif %}
+      {% if note.guests %}
+      <div>
+        <div class="author-type">
+          <strong>Guests</strong>
+        </div>
+        <div class="flex gap-1">
+          {{ render_authors(note.guests) }}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

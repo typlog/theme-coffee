@@ -18,29 +18,14 @@
   {% set notes = query.paginate_notes(per_page=20) %}
   {% if notes %}
     {% set note = notes[0] %}
-    <article class="h-entry item featured">
+    <article class="h-entry item">
       {% if note.audio and note.audio.image %}
         <a href="{{ note.url }}" class="item_image">
           <img src="{{ note.audio.image|thumbnail('sm') }}" alt="{{ note.title }} image">
         </a>
       {% endif %}
-      <div class="item_wrap">
-        <div class="item_meta">
-          {% if note.audio %}
-            <div class="item_label">
-              {% set episode = note.audio %}
-              {% if episode.season and episode.episode %}
-                <span>S{{ episode.season }}E{{ episode.episode }}</span>
-              {% elif episode.episode %}
-                <span>E{{ episode.episode }}</span>
-              {% endif %}
-              <span class="item_duration">{{ episode.audio.duration|durationformat }}</span>
-            </div>
-          {% endif %}
-          <div class="item_time">
-            <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">{{ note.published_at|dateformat('%b %d, %Y') }}</time>
-          </div>
-        </div>
+      <div class="overflow-hidden">
+        {% include "./_partials/entry-meta.j2" %}
         <div class="item_info">
           <h2 class="p-name"><a href="{{ note.url }}">{{ note.title }}</a></h2>
           {% if note.subtitle %}

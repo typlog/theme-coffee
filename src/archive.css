@@ -1,7 +1,7 @@
 @import "./css/layout/site-banner.css";
 @import "./css/layout/site-links.css";
+@import "./css/partials/entry-meta.css";
 @import "./css/partials/entry-item.css";
-@import "./css/partials/item-label.css";
 @import "./css/partials/navigation.css";
 
 .entry-list {

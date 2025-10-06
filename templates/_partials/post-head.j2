@@ -1,0 +1,13 @@
+<div class="entry-head">
+  <div class="overflow-hidden w-full">
+    <h1 class="p-name">{{ note.title }}</h1>
+    {% if note.subtitle %}
+    <h2 class="p-summary">{{ note.subtitle }}</h2>
+    {% endif %}
+    {% if note.authors %}
+    <div class="flex gap-1 mt-2">
+      {{ render_authors(note.authors) }}
+    </div>
+    {% endif %}
+  </div>
+</div>

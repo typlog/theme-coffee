@@ -1,0 +1,17 @@
+<div class="entry-meta">
+  {% if note.audio %}
+  <div class="episode-info">
+    {% set episode = note.audio %}
+    {% if episode.season and episode.episode %}
+    <span>S{{ episode.season }}E{{ episode.episode }}</span>
+    {% elif episode.episode %}
+    <span>E{{ episode.episode }}</span>
+    {% endif %}
+    <span class="episode-duration">{{ episode.audio.duration|durationformat }}</span>
+  </div>
+  {% endif %}
+  <div>
+    <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">{{ note.published_at|dateformat('%b
+      %d, %Y') }}</time>
+  </div>
+</div>

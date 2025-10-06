@@ -1,0 +1,24 @@
+.entry-meta {
+  font: 500 12px/1.5 "IBM Plex Sans", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.episode-info {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.episode-info > span + span:before {
+  content: " | ";
+}
+
+.h-entry .episode-info {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--accent-10);
+  color: var(--accent-contrast);
+}

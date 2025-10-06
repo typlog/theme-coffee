@@ -11,24 +11,8 @@
     <img src="{{ note.cover|thumbnail('ss') }}" alt="{{ note.title }}" loading="lazy" width="120" height="120">
   </a>
   {% endif %}
-  <div class="item_wrap">
-    <div class="item_meta">
-      {% if note.audio %}
-      <div class="item_label">
-        {% set episode = note.audio %}
-        {% if episode.season and episode.episode %}
-        <span>S{{ episode.season }}E{{ episode.episode }}</span>
-        {% elif episode.episode %}
-        <span>E{{ episode.episode }}</span>
-        {% endif %}
-        <span class="item_duration">{{ episode.audio.duration|durationformat }}</span>
-      </div>
-      {% endif %}
-      <div class="item_time">
-        <time class="dt-published" datetime="{{ note.published_at|xmldatetime }}">{{ note.published_at|dateformat('%b
-          %d, %Y') }}</time>
-      </div>
-    </div>
+  <div class="overflow-hidden">
+    {% include "./entry-meta.j2" %}
     <div class="item_info">
       <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
       {% if note.subtitle %}
