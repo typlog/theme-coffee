@@ -1,0 +1,14 @@
+<div class="p-author h-card flex gap-4" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="{{ author.url }}">
+    <img class="u-photo rounded-full" itemprop="image"
+      src="{{ author.avatar|thumbnail('ss') }}" alt="{{ author.name }}" width="48" height="48">
+  </a>
+  <div class="grow flex flex-col">
+    <div>
+      <strong class="p-name" itemprop="name">
+        <a href="{{ author.url }}" class="u-url">{{ author.name }}</a>
+      </strong>
+    </div>
+    <div class="text-sm" itemprop="description">{{ author.description }}</div>
+  </div>
+</div>
