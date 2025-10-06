@@ -64,3 +64,10 @@
     display: none;
   }
 }
+
+@media (max-width: 1100px) {
+  .entry-head {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

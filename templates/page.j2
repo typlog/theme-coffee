@@ -1,5 +1,10 @@
 {% block styles %}
+<style>:root{ --background-color: {{ theme_background_color|default("#F8F7F6") }} }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ _static_url }}/base.css">
+<link rel="stylesheet" href="{{ _static_url }}/entry.css">
 {% endblock %}
 
 {% block scripts %}
@@ -9,13 +14,17 @@
 
 {% block body %}
   {% include "./_layouts/site-head.j2" %}
-  <div class="container">
-    <article role="main" class="h-entry">
+  <article role="main" class="h-entry mt-8">
+    <div class="entry-head">
       <h1 class="p-name">{{ page.title }}</h1>
-      <div class="e-content">
-        {{ page.content }}
+    </div>
+    <div class="entry-box">
+      <div class="entry-box-inner">
+        <div class="e-content">
+          {{ page.content }}
+        </div>
       </div>
-    </article>
-  </div>
+    </div>
+  </article>
   {% include "./_layouts/site-foot.j2" %}
 {% endblock %}
